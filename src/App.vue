@@ -16,28 +16,20 @@
       В App.vue приймаємо цю подію, шукаємо в масиві яку саме тудушку хочемо видалити і робимо splice().
       Для тих хто виконає це завдання, зверстати формочку з email, пароль, радіобаттонами з male або female і на кнопку submit отримати цей обєкт в console.log() -->
 
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
