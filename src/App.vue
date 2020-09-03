@@ -17,19 +17,46 @@
       Для тих хто виконає це завдання, зверстати формочку з email, пароль, радіобаттонами з male або female і на кнопку submit отримати цей обєкт в console.log() -->
 
     <h1>HomeWork - 2</h1>
+    <AddTodo/>
+    <TodoList :todo="todo"/>
+
 
   </div>
 </template>
 
 <script>
 
+import AddTodo from "@/components/AddTodo";
+import TodoList from "@/components/TodoList";
+
 export default {
   name: 'App',
+  
   components: {
+    AddTodo,
+    TodoList,
   },
 
   data () {
-
+    return {
+      todo: [ {
+        action: "wake up",
+        status: true
+      },
+      {
+        action: "get up",
+        status: true
+      },
+      {
+        action: "breakfast",
+        status: true
+      },
+      {
+        action: "work",
+        status: true
+      },
+      ]
+    }
   },
 }
 </script>
