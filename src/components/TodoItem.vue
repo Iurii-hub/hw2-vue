@@ -2,7 +2,6 @@
   <div>
       <!-- <h3>TodoItem</h3> -->
       <h4>{{todos}}</h4>
-      <button @click="remove">Delete</button>
 
   </div>
 </template>
@@ -19,11 +18,6 @@ export default {
         }
     },
 
-    methods: {
-        remove() {
-            this.$emit("remove", this.todo)
-        }
-    }
 }
 
 

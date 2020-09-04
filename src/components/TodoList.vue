@@ -1,10 +1,12 @@
 <template>
   <div>
       <!-- <h3>TodoList</h3> -->
-      
-      <div v-for="(todos, i) in todo" :key="i">
-          <TodoItem :todos="todos" @remove = "remove"/>
-      </div>
+      <ul>
+          <li v-for="(todos, i) in todo" :key="i">
+              <TodoItem :todos="todos" @remove = "remove"/>
+              <button @click="remove(i)">Delete</button>
+          </li>
+      </ul>  
 
   </div>
 </template>
@@ -20,7 +22,7 @@ export default {
     props: {
         todo: {
             type: Array,
-            // required: true,
+            required: true,
         }
     },
 
