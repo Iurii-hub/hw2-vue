@@ -1,7 +1,8 @@
 <template>
   <div>
-      <h5>{{to_do.action}}</h5>
-      <p>{{to_do.status}}</p>
+      <!-- <h3>TodoItem</h3> -->
+      <h4>{{todos}}</h4>
+      <button @click="remove">Delete</button>
 
   </div>
 </template>
@@ -12,14 +13,15 @@ export default {
     name: "TodoItem",
 
     props: {
-        to_do: {
-            type: Object,
+        todos: {
+            type: String,
+            required: true,
         }
     },
 
-    data () {
-        return {
-            dataPropsTodo: this.to_do
+    methods: {
+        remove() {
+            this.$emit("remove", this.todo)
         }
     }
 }
@@ -31,3 +33,4 @@ export default {
 <style>
 
 </style>
+

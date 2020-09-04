@@ -17,8 +17,8 @@
       Для тих хто виконає це завдання, зверстати формочку з email, пароль, радіобаттонами з male або female і на кнопку submit отримати цей обєкт в console.log() -->
 
     <h1>HomeWork - 2</h1>
-    <AddTodo/>
-    <TodoList :todo="todo"/>
+    <AddTodo @add = "add"/>
+    <TodoList :todo="todo" @remove = "remove"/>
 
 
   </div>
@@ -39,25 +39,21 @@ export default {
 
   data () {
     return {
-      todo: [ {
-        action: "wake up",
-        status: true
-      },
-      {
-        action: "get up",
-        status: true
-      },
-      {
-        action: "breakfast",
-        status: true
-      },
-      {
-        action: "work",
-        status: true
-      },
-      ]
+      todo: []
     }
   },
+
+  methods: {
+    add(event) {
+      this.todo.push(event)
+    },
+
+    remove(event) {
+      this.todo.splice(event, 1)
+    }
+  }
+
+
 }
 </script>
 

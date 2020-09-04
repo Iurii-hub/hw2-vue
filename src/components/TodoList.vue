@@ -1,10 +1,9 @@
 <template>
   <div>
-      <div
-      v-for="(to_do, i) in todo"
-      :key="i"
-      >
-
+      <!-- <h3>TodoList</h3> -->
+      
+      <div v-for="(todos, i) in todo" :key="i">
+          <TodoItem :todos="todos" @remove = "remove"/>
       </div>
 
   </div>
@@ -21,6 +20,7 @@ export default {
     props: {
         todo: {
             type: Array,
+            // required: true,
         }
     },
 
@@ -28,9 +28,9 @@ export default {
         TodoItem
     },
 
-    data () {
-        return {
-
+    methods: {
+        remove(event) {
+            this.$emit("remove", event)
         }
     }
 }
